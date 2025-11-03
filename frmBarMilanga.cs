@@ -13,59 +13,60 @@ namespace pryDelgado_BarLaMilanga
 
         private void frmBarMilanga_Load(object sender, EventArgs e)
         {
-            dgvResultados.ColumnCount = 4;
-            dgvResultados.RowCount = 5;
+            cmdMozoDia.Enabled = false;
+            cmdTotales.Enabled = false;
+
+            dgvResultados.ColumnCount = 4; //Columnas
+            dgvResultados.RowCount = 5; //Filas
 
             dgvResultados.Columns[0].HeaderText = "Comidas";
             dgvResultados.Columns[1].HeaderText = "Bebidas sin alcohol";
             dgvResultados.Columns[2].HeaderText = "Bebidas con alcohol";
             dgvResultados.Columns[3].HeaderText = "Postres";
 
-            string[] mozos = { "Julio", "Esteban", "Javier", "Gonzalo", "Alberto" };
+            string[] Mozos = { "Julio", "Esteban", "Javier", "Gonzalo", "Alberto" };
             for (int i = 0; i < 5; i++)
             {
-                dgvResultados.Rows[i].HeaderCell.Value = mozos[i];
+                dgvResultados.Rows[i].HeaderCell.Value = Mozos[i]; //Al recorrer las filas coloca los nombre de los mozos
             }
-            cmdMozoDia.Enabled = false;
-            cmdTotales.Enabled = false;
         }
 
         private void cmdValidarDatos_Click(object sender, EventArgs e)
         {
             bool valido = true;
 
-            for (int f = 0; f < 5; f++)
+            for (int f = 0; f < 5; f++) //Recorro las filas
             {
-                for (int c = 0; c < 4; c++)
+                for (int c = 0; c < 4; c++) //Recorro las columnas
                 {
                     string valor = Convert.ToString(dgvResultados.Rows[f].Cells[c].Value);
 
-                    if (valor == "")
+                    if (valor == "") 
                     {
                         valido = false;
                         break;
                     }
 
-                    try
+                    try // Intento convertir el valor a float
                     {
                         Ventas[f, c] = float.Parse(valor);
                     }
-                    catch
+                    catch 
                     {
                         valido = false;
                         break;
                     }
                 }
             }
-            if (!valido)
+            if (!valido) // Si algún dato no es válido
             {
-                MessageBox.Show("Error: Verifique que todas las celdas contengan valores numéricos válidos (puede usar 0).");
+                MessageBox.Show("Error al cargar los datos: Los valores deben ser numéricos válidos.");
                 cmdMozoDia.Enabled = false;
                 cmdTotales.Enabled = false;
             }
             else
             {
-                MessageBox.Show("Datos validados correctamente.");
+                MessageBox.Show("Datos validados.");
                 cmdMozoDia.Enabled = true;
                 cmdTotales.Enabled = true;
             }
@@ -73,57 +74,52 @@ namespace pryDelgado_BarLaMilanga
 
         private void cmdMozoDia_Click(object sender, EventArgs e)
         {
-            int mejorMozo = 0;
-            float mayorVenta = 0;
+            int MozoDia = 0;
+            float VentaMayor = 0;
 
             for (int f = 0; f < 5; f++)
             {
-                float totalMozo = 0;
+                float TotMozo = 0;
                 for (int c = 0; c < 4; c++)
                 {
-                    totalMozo += Ventas[f, c];
+                    TotMozo += Ventas[f, c];
                 }
 
-                if (totalMozo > mayorVenta)
+                if (TotMozo > VentaMayor)
                 {
-                    mayorVenta = totalMozo;
-                    mejorMozo = f;
+                    VentaMayor = TotMozo;
+                    MozoDia = f;
                 }
             }
 
-            txtbMozoDia.Text = Mozos[mejorMozo];
-            txtbImporte.Text = mayorVenta.ToString("0.00");
+            txtbMozoDia.Text = Mozos[MozoDia]; // Nombre del mozo con mayor venta
+            txtbImporte.Text = VentaMayor.ToString("0.00"); // Importe total vendido por el mozo
         }
 
         private void cmdTotales_Click(object sender, EventArgs e)
         {
-            float totalGeneral = 0;
-            float[] totalPorCategoria = new float[4];
+            float TotGeneral = 0;
+            float[] TotCategoria = new float[4];
 
             for (int f = 0; f < 5; f++)
             {
                 for (int c = 0; c < 4; c++)
                 {
-                    totalGeneral += Ventas[f, c];
-                    totalPorCategoria[c] += Ventas[f, c];
+                    TotGeneral += Ventas[f, c];
+                    TotCategoria[c] += Ventas[f, c];
                 }
             }
 
-            txtbTotGeneral.Text = totalGeneral.ToString("0.00");
-            txtbTOTComidas.Text = totalPorCategoria[0].ToString("0.00");
-            txtbBebSAlcohol.Text = totalPorCategoria[1].ToString("0.00");
-            txtbBebAlcohol.Text = totalPorCategoria[2].ToString("0.00");
-            txtbPostres.Text = totalPorCategoria[3].ToString("0.00");
+            txtbTotGeneral.Text = TotGeneral.ToString("0.00");
+            txtbTOTComidas.Text = TotCategoria[0].ToString("0.00");
+            txtbBebSAlcohol.Text = TotCategoria[1].ToString("0.00");
+            txtbBebAlcohol.Text = TotCategoria[2].ToString("0.00");
+            txtbPostres.Text = TotCategoria[3].ToString("0.00");
         }
 
         private void cmdCerrar_Click(object sender, EventArgs e)
         {
             Close();
-        }
-
-        private void txtbImporte_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 } 

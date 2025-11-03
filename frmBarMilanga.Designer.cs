@@ -225,7 +225,7 @@
             txtbImporte.Name = "txtbImporte";
             txtbImporte.Size = new Size(125, 27);
             txtbImporte.TabIndex = 14;
-            txtbImporte.TextChanged += txtbImporte_TextChanged;
+           // txtbImporte.TextChanged += txtbImporte_TextChanged;
             // 
             // txtbMozoDia
             // 
