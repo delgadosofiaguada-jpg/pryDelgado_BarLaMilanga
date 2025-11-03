@@ -108,7 +108,7 @@
             // cmdValidarDatos
             // 
             cmdValidarDatos.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            cmdValidarDatos.Location = new Point(218, 328);
+            cmdValidarDatos.Location = new Point(8, 328);
             cmdValidarDatos.Name = "cmdValidarDatos";
             cmdValidarDatos.Size = new Size(106, 29);
             cmdValidarDatos.TabIndex = 2;
@@ -119,7 +119,7 @@
             // cmdTotales
             // 
             cmdTotales.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            cmdTotales.Location = new Point(500, 328);
+            cmdTotales.Location = new Point(137, 328);
             cmdTotales.Name = "cmdTotales";
             cmdTotales.Size = new Size(106, 29);
             cmdTotales.TabIndex = 3;
@@ -130,7 +130,7 @@
             // cmdMozoDia
             // 
             cmdMozoDia.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            cmdMozoDia.Location = new Point(355, 328);
+            cmdMozoDia.Location = new Point(354, 328);
             cmdMozoDia.Name = "cmdMozoDia";
             cmdMozoDia.Size = new Size(128, 29);
             cmdMozoDia.TabIndex = 4;
@@ -141,7 +141,7 @@
             // cmdCerrar
             // 
             cmdCerrar.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            cmdCerrar.Location = new Point(500, 586);
+            cmdCerrar.Location = new Point(480, 633);
             cmdCerrar.Name = "cmdCerrar";
             cmdCerrar.Size = new Size(106, 38);
             cmdCerrar.TabIndex = 5;
@@ -152,7 +152,7 @@
             // lblMozoDia
             // 
             lblMozoDia.AutoSize = true;
-            lblMozoDia.Location = new Point(340, 397);
+            lblMozoDia.Location = new Point(354, 398);
             lblMozoDia.Name = "lblMozoDia";
             lblMozoDia.Size = new Size(99, 20);
             lblMozoDia.TabIndex = 6;
@@ -161,7 +161,7 @@
             // lblTotBebSAlcohol
             // 
             lblTotBebSAlcohol.AutoSize = true;
-            lblTotBebSAlcohol.Location = new Point(8, 496);
+            lblTotBebSAlcohol.Location = new Point(1, 497);
             lblTotBebSAlcohol.Name = "lblTotBebSAlcohol";
             lblTotBebSAlcohol.Size = new Size(139, 20);
             lblTotBebSAlcohol.TabIndex = 7;
@@ -170,7 +170,7 @@
             // lblTotBebAlcohol
             // 
             lblTotBebAlcohol.AutoSize = true;
-            lblTotBebAlcohol.Location = new Point(8, 447);
+            lblTotBebAlcohol.Location = new Point(1, 448);
             lblTotBebAlcohol.Name = "lblTotBebAlcohol";
             lblTotBebAlcohol.Size = new Size(145, 20);
             lblTotBebAlcohol.TabIndex = 8;
@@ -179,7 +179,7 @@
             // lblTotComidas
             // 
             lblTotComidas.AutoSize = true;
-            lblTotComidas.Location = new Point(43, 397);
+            lblTotComidas.Location = new Point(36, 398);
             lblTotComidas.Name = "lblTotComidas";
             lblTotComidas.Size = new Size(104, 20);
             lblTotComidas.TabIndex = 9;
@@ -188,7 +188,7 @@
             // lblTotalG
             // 
             lblTotalG.AutoSize = true;
-            lblTotalG.Location = new Point(340, 508);
+            lblTotalG.Location = new Point(36, 603);
             lblTotalG.Name = "lblTotalG";
             lblTotalG.Size = new Size(97, 20);
             lblTotalG.TabIndex = 10;
@@ -197,7 +197,7 @@
             // lblImporte
             // 
             lblImporte.AutoSize = true;
-            lblImporte.Location = new Point(375, 457);
+            lblImporte.Location = new Point(391, 447);
             lblImporte.Name = "lblImporte";
             lblImporte.Size = new Size(62, 20);
             lblImporte.TabIndex = 11;
@@ -206,7 +206,7 @@
             // lblTotPostres
             // 
             lblTotPostres.AutoSize = true;
-            lblTotPostres.Location = new Point(92, 545);
+            lblTotPostres.Location = new Point(85, 551);
             lblTotPostres.Name = "lblTotPostres";
             lblTotPostres.Size = new Size(55, 20);
             lblTotPostres.TabIndex = 12;
@@ -214,49 +214,50 @@
             // 
             // txtbTOTComidas
             // 
-            txtbTOTComidas.Location = new Point(168, 390);
+            txtbTOTComidas.Location = new Point(161, 391);
             txtbTOTComidas.Name = "txtbTOTComidas";
             txtbTOTComidas.Size = new Size(125, 27);
             txtbTOTComidas.TabIndex = 13;
             // 
             // txtbImporte
             // 
-            txtbImporte.Location = new Point(466, 450);
+            txtbImporte.Location = new Point(480, 440);
             txtbImporte.Name = "txtbImporte";
             txtbImporte.Size = new Size(125, 27);
             txtbImporte.TabIndex = 14;
+            txtbImporte.TextChanged += txtbImporte_TextChanged;
             // 
             // txtbMozoDia
             // 
-            txtbMozoDia.Location = new Point(466, 390);
+            txtbMozoDia.Location = new Point(480, 391);
             txtbMozoDia.Name = "txtbMozoDia";
             txtbMozoDia.Size = new Size(125, 27);
             txtbMozoDia.TabIndex = 15;
             // 
             // txtbPostres
             // 
-            txtbPostres.Location = new Point(168, 538);
+            txtbPostres.Location = new Point(161, 544);
             txtbPostres.Name = "txtbPostres";
             txtbPostres.Size = new Size(125, 27);
             txtbPostres.TabIndex = 16;
             // 
             // txtbBebSAlcohol
             // 
-            txtbBebSAlcohol.Location = new Point(168, 489);
+            txtbBebSAlcohol.Location = new Point(161, 490);
             txtbBebSAlcohol.Name = "txtbBebSAlcohol";
             txtbBebSAlcohol.Size = new Size(125, 27);
             txtbBebSAlcohol.TabIndex = 17;
             // 
             // txtbBebAlcohol
             // 
-            txtbBebAlcohol.Location = new Point(168, 440);
+            txtbBebAlcohol.Location = new Point(161, 441);
             txtbBebAlcohol.Name = "txtbBebAlcohol";
             txtbBebAlcohol.Size = new Size(125, 27);
             txtbBebAlcohol.TabIndex = 18;
             // 
             // txtbTotGeneral
             // 
-            txtbTotGeneral.Location = new Point(466, 501);
+            txtbTotGeneral.Location = new Point(162, 596);
             txtbTotGeneral.Name = "txtbTotGeneral";
             txtbTotGeneral.Size = new Size(125, 27);
             txtbTotGeneral.TabIndex = 19;
@@ -265,7 +266,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(620, 636);
+            ClientSize = new Size(620, 679);
             Controls.Add(txtbTotGeneral);
             Controls.Add(txtbBebAlcohol);
             Controls.Add(txtbBebSAlcohol);

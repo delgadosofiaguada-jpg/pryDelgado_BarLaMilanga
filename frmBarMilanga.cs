@@ -120,5 +120,10 @@ namespace pryDelgado_BarLaMilanga
         {
             Close();
         }
+
+        private void txtbImporte_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 } 
