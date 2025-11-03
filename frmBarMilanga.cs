@@ -19,6 +19,7 @@ namespace pryDelgado_BarLaMilanga
             dgvResultados.ColumnCount = 4; //Columnas
             dgvResultados.RowCount = 5; //Filas
 
+
             dgvResultados.Columns[0].HeaderText = "Comidas";
             dgvResultados.Columns[1].HeaderText = "Bebidas sin alcohol";
             dgvResultados.Columns[2].HeaderText = "Bebidas con alcohol";
@@ -29,7 +30,10 @@ namespace pryDelgado_BarLaMilanga
             {
                 dgvResultados.Rows[i].HeaderCell.Value = Mozos[i]; //Al recorrer las filas coloca los nombre de los mozos
             }
+
+            
         }
+        
 
         private void cmdValidarDatos_Click(object sender, EventArgs e)
         {
